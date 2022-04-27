@@ -7,7 +7,31 @@ Consigli del giorno:
 * Dividete in piccoli problemi la consegna.
 * Individuate gli elementi di cui avete bisogno per realizzare il programma.*/
 
-//Creare un array
+function generateRndNumbers(maxLimit) {
+    //Crea un array
+    const numbersArray = [];
+    //creare 5 numeri casuali
+    while (numbersArray.length < 5) {
+        const number = rndNumber (1, maxLimit)
+    //inserire i 5 numeri nell'array
+        if ( !numbersArray.includes(number)) {
+            numbersArray.push(number);
+        }
+    }
+    return numbersArray 
+    
+    //Functions - creare numeri casuali
+    function rndNumber(min,max) {
+        return Math.floor(Math.random() * (max - min +1) ) + min;    
+    }    
+}
+    //stampare i 5 numeri nell'html
+const generateArray = generateRndNumbers (5 ,100);
+document.querySelector(".numbers").innerHTML = generateArray; 
+    console.log(generateArray);
+
+    
+
 
 //Inserire nell'array 5 numeri casuali
 
